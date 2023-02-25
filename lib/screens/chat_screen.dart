@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../constants/constants.dart';
-import '../services/assets_manager.dart';
+
+import '../manager/assets_manager.dart';
+import '../manager/constants.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
