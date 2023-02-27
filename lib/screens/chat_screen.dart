@@ -1,8 +1,7 @@
+import 'package:chat_gpt_app/manager/services.dart';
 import 'package:chat_gpt_app/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-
 import '../manager/assets_manager.dart';
 import '../manager/constants.dart';
 
@@ -40,7 +39,9 @@ class _ChatScreenState extends State<ChatScreen> {
         title: const Text("Chat GPT"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await Services.showModalSheet(context: context);
+            },
             icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
           ),
         ],
@@ -52,7 +53,11 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 itemCount: 6,
                 itemBuilder: (context, index) {
-                  return const ChatWidget();
+                  return ChatWidget(
+                    msg: chatMessages[index]["msg"].toString(),
+                    chatIndex:
+                        int.parse(chatMessages[index]["chatIndex"].toString()),
+                  );
                 },
               ),
             ),
@@ -74,9 +79,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         child: TextField(
                           style: const TextStyle(color: Colors.white),
                           controller: textEditingController,
-                          onSubmitted: (value) {
-                            //send message
-                          },
+                          onSubmitted: (value) {},
                           decoration: const InputDecoration.collapsed(
                             hintText: "Typing here...",
                             hintStyle: TextStyle(color: Colors.grey),
