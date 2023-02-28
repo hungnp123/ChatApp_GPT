@@ -2,6 +2,7 @@ import 'package:chat_gpt_app/manager/services.dart';
 import 'package:chat_gpt_app/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 import '../manager/assets_manager.dart';
 import '../manager/constants.dart';
 
