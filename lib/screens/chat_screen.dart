@@ -34,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
         elevation: 2,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssestManager.chatlogo),
+          child: Image.asset(AssestManager.useravtar),
         ),
         title: const Text("Chat GPT"),
         actions: [
